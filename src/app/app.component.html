@@ -7,8 +7,10 @@
     <div class="form-group mt-2">
       <app-custom-dropdown formControlName="dropdown" title="Dropdown El" [items]="items"></app-custom-dropdown>
     </div>
+    <div class="form-group mt-2">
+      <app-custom-multiple-select formControlName="multipleSelect" [options]="items"></app-custom-multiple-select>
+    </div>
     <button
-      [disabled]="form.invalid"
       type="submit"
       class="btn btn-primary"
     >Submit

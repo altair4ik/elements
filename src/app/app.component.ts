@@ -18,10 +18,12 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       'dropdown': new FormControl(null),
+      'multipleSelect': new FormControl(null),
     });
   }
 
   submit(): void {
     console.log('dropdown_value', 'form', this.form.get('dropdown').value);
+    console.log('multipleSelect_value', 'form', this.form.get('multipleSelect').value);
   }
 }
