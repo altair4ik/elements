@@ -9,10 +9,10 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class AppComponent implements OnInit {
   form: FormGroup;
   items = [
-    {title: '1', value: '1'},
-    {title: '2', value: '2'},
-    {title: '3', value: '3'},
-    {title: '4', value: '4'}
+    {title: 'one', value: '1'},
+    {title: 'two', value: '2'},
+    {title: 'three', value: '3'},
+    {title: 'four', value: '4'}
   ];
 
   ngOnInit(): void {

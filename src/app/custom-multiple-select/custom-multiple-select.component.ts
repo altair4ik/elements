@@ -15,20 +15,24 @@ import {MultipleSelectItem} from './interfaces/multiple-select-item';
 export class CustomMultipleSelectComponent implements ControlValueAccessor {
   @ViewChild('select') select;
   @Input() options: MultipleSelectItem[] = [];
-  selectedItems: MultipleSelectItem[] = [];
 
-  optionSelect(option: MultipleSelectItem) {
-    console.log(this.select.nativeElement.selectedOptions);
-    this.writeValue(option.value);
+  optionSelect() {
+    this.writeValue(this.getValue(this.select.nativeElement.selectedOptions));
     this.onTouched();
   }
 
-  writeValue(value: string): void {
-    const selectedEl = this.options.find(el => el.value === value);
-    if (selectedEl) {
-      this.selectedItems.push(selectedEl);
-      this.onChange(this.selectedItems);
+  getValue(selectedOptions: HTMLElement[]): string[] {
+    const values: string[] = [];
+    for (const key in selectedOptions) {
+      if (selectedOptions.hasOwnProperty(key)) {
+        values.push(selectedOptions[key].getAttribute('value'));
+      }
     }
+    return values;
+  }
+
+  writeValue(values: string[]): void {
+    this.onChange(values);
   }
 
   onChange: any = () => {};

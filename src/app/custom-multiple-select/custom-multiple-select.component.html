@@ -1,7 +1,6 @@
-<select #select class="custom-select" multiple size=size>
+<select #select class="custom-select" multiple size=size (change)="optionSelect();">
   <option
     *ngFor="let option of options"
-    value="1"
-    (click)="optionSelect(option);"
-  >One</option>
+    value="{{option.value}}"
+  >{{option.title}}</option>
 </select>
