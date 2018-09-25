@@ -6,19 +6,21 @@ import {RatingInputComponent} from './rating-input/rating-input.component';
 import {CustomDropdownModule} from './custom-dropdown/modules/custom-dropdown.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CustomMultipleSelectModule} from './custom-multiple-select/modules/custom-multiple-select.module';
-import { CustomCheckboxGroupComponent } from './custom-checkbox-group/custom-checkbox-group.component';
+import {CustomCheckboxGroupModule} from './custom-checkbox-group/modules/custom-checkbox-group.module';
+import {CustomRadiobuttonGroupModule} from './custom-radiobutton-group/modules/custom-radiobutton-group.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RatingInputComponent,
-    CustomCheckboxGroupComponent,
+    RatingInputComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     CustomDropdownModule,
-    CustomMultipleSelectModule
+    CustomMultipleSelectModule,
+    CustomCheckboxGroupModule,
+    CustomRadiobuttonGroupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
