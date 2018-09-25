@@ -1,3 +1,14 @@
-<p>
-  custom-checkbox-group works!
-</p>
+<div class="form-group">
+  <div
+    class="custom-control custom-checkbox d-inline-block ml-5"
+    *ngFor="let item of items; let i = index"
+  >
+    <input
+      type="checkbox"
+      class="custom-control-input"
+      id="checkbox{{i}}"
+      (change)="onCheckChange($event.target.checked, item.value)"
+    >
+    <label class="custom-control-label" for="checkbox{{i}}">{{item.title}}</label>
+  </div>
+</div>

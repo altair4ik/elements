@@ -19,11 +19,13 @@ export class AppComponent implements OnInit {
     this.form = new FormGroup({
       'dropdown': new FormControl(null),
       'multipleSelect': new FormControl(null),
+      'checkboxGroup': new FormControl(null)
     });
   }
 
   submit(): void {
     console.log('dropdown_value', 'form', this.form.get('dropdown').value);
     console.log('multipleSelect_value', 'form', this.form.get('multipleSelect').value);
+    console.log('checkboxGroup_value', 'form', this.form.get('checkboxGroup').value);
   }
 }
